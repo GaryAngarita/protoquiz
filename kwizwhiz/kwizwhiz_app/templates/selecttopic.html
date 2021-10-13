@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwiz Whiz Category Selection</title>
+    {% load static %}
+</head>
+<body>
+    <div>
+        <div>            
+            <h1>Select which topic you wish to attempt</h1>
+        </div>
+        <div>
+            <a href="/">Homepage</a>
+        </div>
+    </div>
+    {% for topic in topics %}
+    <div>
+        <a href="/selectquiz/{{topic.id}}">{{topic.name}}
+            {% if topic.id == 1 %}
+            <img src="{% static 'img/science.jpg' %}" height="200" width="200">
+            {% elif topic.id == 2 %}
+            <img src="{% static 'img/sports.jpg' %}" height="200" width="200">
+            {% elif topic.id == 3 %}
+            <img src="{% static 'img/animals.jpg' %}" height="200" width="200">
+            {% else %}
+            <img src="{% static 'img/aviation.jpg' %}"height="200" width="200">
+            {% endif %}</a>        
+    </div>
+    {% endfor %}
+</body>
+</html>

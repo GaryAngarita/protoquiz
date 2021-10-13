@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwiz Whiz Quiz Selection</title>
+    {% load static %}
+</head>
+<body>
+    <div>
+        <div>            
+            <h1>Select which quiz you wish to take</h1>
+        </div>
+        <div>
+            <a href="/">Homepage</a>
+        </div>
+    </div>
+    {% for quiz in category.quizzes.all %}
+    <div>
+        <a href="/takequiz/{{quiz.id}}">{{quiz.title}}
+            {% if quiz.title == "Basketball" %}
+            <img src="{% static 'img/basketball.jpg' %}" height="200" width="200">
+            {% elif quiz.title == "Football" %}
+            <img src="{% static 'img/football.jpg' %}" height="200" width="200">
+            {% elif quiz.title == "Baseball" %}
+            <img src="{% static 'img/baseball.jpg' %}" height="200" width="200">
+            {% elif quiz.title == "Anatomy" %}
+            <img src="{% static 'img/anatomy.jpg' %}" height="200" width="200">
+            {% elif quiz.title == "Space" %}
+            <img src="{% static 'img/space.jpg' %}" height="200" width="200">
+            {% elif quiz.title == "Pets" %}
+            <img src="{% static 'img/pets.jpg' %}" height="200" width="200">
+            {% elif quiz.title == "Airborne" %}
+            <img src="{% static 'img/airborne.jpg' %}" height="200" width="200">
+            {% elif quiz.title == "Airspace" %}
+            <img src="{% static 'img/airspace.jpg' %}" height="200" width="250">
+            {% endif %}</a>        
+    </div>
+    {% endfor %}
+</body>
+</html>
