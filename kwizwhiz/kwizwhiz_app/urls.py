@@ -4,7 +4,8 @@ from . import views
 urlpatterns = [
     path('', views.homepage),
     path('register', views.register),
-    path('login', views.kidlogin),
+    path('login', views.login),
+    # path('updateaccount/<user_id>', views.updateaccount),
     path('selectcategory', views.selectcategory),
     path('selecttopic/<int:category_id>', views.selecttopic),
     path('selectquiz/<int:topic_id>', views.selectquiz),
