@@ -111,6 +111,10 @@ class Quiz(models.Model):
         return self.title
 
 class Question(models.Model):
+
+    class Meta:
+        ordering = ['quiz']
+
     quiz = models.ForeignKey(Quiz, related_name='questions', on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=255)
 
