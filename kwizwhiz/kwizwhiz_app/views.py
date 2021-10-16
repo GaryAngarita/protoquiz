@@ -4,7 +4,7 @@ from .models import *
 import bcrypt
 
 def homepage(request):
-    pass
+    return render(request, "homepage.html")
 
 def register(request):
     errors = User.objects.reg_validator(request.POST)
@@ -44,13 +44,27 @@ def login(request):
 #     pass
 
 def selectcategory(request):
-    pass
+    context = {
+        "categories": Category.objects.all()
+    }
+    return render(request, "selectcategory.html", context)
 
 def selecttopic(request, category_id):
-    pass
+    category = Category.objects.get(id = category_id)
+    context = {
+        "topics": category.topics.all()
+    }
+    return render(request, "selecttopic.html", context)
 
 def selectquiz(request, topic_id):
-    pass
+    topic = Topic.objects.get(id = topic_id)
+    quizzes = Quiz.objects.all()
+    context = {
+        "topic": topic,
+        "quizzes": quizzes
+
+    }
+    return render(request, "selectquiz.html", context)
 
 def takequiz(request, quiz_id):
     pass

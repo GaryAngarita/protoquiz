@@ -16,7 +16,7 @@
             <a href="/">Homepage</a>
         </div>
     </div>
-    {% for quiz in category.quizzes.all %}
+    {% for quiz in topic.quizzes.all %}
     <div>
         <a href="/takequiz/{{quiz.id}}">{{quiz.title}}
             {% if quiz.title == "Basketball" %}
