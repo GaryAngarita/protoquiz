@@ -67,7 +67,15 @@ def selectquiz(request, topic_id):
     return render(request, "selectquiz.html", context)
 
 def takequiz(request, quiz_id):
-    pass
+    quiz = Quiz.objects.get(id = quiz_id)
+    questions = Question.objects.all()
+    answers = Answer.objects.all()
+    context = {
+        "answers": answers,
+        "questions": questions,
+        "quiz": quiz
+    }
+    return render(request, "takequiz.html", context)
 
 def processquiz(request, quiz_id):
     pass
