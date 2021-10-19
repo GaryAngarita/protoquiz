@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kwiz Whiz Results</title>
+    {% load static %}
+</head>
+<body>
+    <h1>Here are your results {{ request.session.name }}</h1>
+
+    <h3>Total questions: {{request.session.total}}</h3>
+    <h3>Score: {{request.session.score}}</h3>
+    <h3>Correct: {{request.session.correct}}</h3>
+    <h3>Incorrect (or blank): {{request.session.wrong}}</h3>
+    {% if request.session.category == "Fails" %}
+        {% if request.session.score > 90 and quiz.title == "National Airspace" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jNMb2YMmZI0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "National Airspace" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/alcohol.jpg' %}" alt="">
+        {% elif request.session.score > 90 and quiz.title == "VFR Sectional" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OUZ1IYbvIok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "VFR Sectional" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/shopping.jpg' %}" alt="">
+        {% elif request.session.score > 90 and quiz.title == "Aerodynamics" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OhtDruS-prE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "Aerodynamics" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/zipper.jpg' %}" alt="">
+        {% elif request.session.score > 90 and quiz.title == "Aeromedical & Human Factors" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4HtmxrAhoGw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "Aeromedical & Human Factors" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/swallowing.jpg' %}" alt="">
+        {% elif request.session.score > 90 and quiz.title == "General Operations" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/73dWGUz9Es8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "General Operations" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/singles.png' %}" alt="">
+        {% endif %}
+    {% endif %}
+    {% if request.session.category == "Fighting" %}
+        {% if request.session.score > 90 and quiz.title == "National Airspace" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/b7_Bg0blSV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "National Airspace" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/parents.jpg' %}" alt="">
+        {% elif request.session.score > 90 and quiz.title == "VFR Sectional" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/OLtu59hiKXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "VFR Sectional" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/fightclub.jpg' %}" alt="">
+        {% elif request.session.score > 90 and quiz.title == "Aerodynamics" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bcbXnjfswpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "Aerodynamics" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/darkages.jpg' %}" alt="">
+        {% elif request.session.score > 90 and quiz.title == "Aeromedical & Human Factors" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zutv_qlu5JA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "Aeromedical & Human Factors" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/womenboxing.jpg' %}" alt="">
+        {% elif request.session.score > 90 and quiz.title == "General Operations" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/rZKJf9T7jyI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {% elif request.session.score < 90 and quiz.title == "General Operations" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/captamerica.jpg' %}" alt="">
+        {% endif %}
+    {% endif %}
+    {% if request.session.category == "Gaming" %}
+        {% if request.session.score > 90 and quiz.title == "National Airspace" %}
+        {% elif request.session.score < 90 and quiz.title == "National Airspace" %}
+        {% elif request.session.score > 90 and quiz.title == "VFR Sectional" %}
+        {% elif request.session.score < 90 and quiz.title == "VFR Sectional" %}
+        {% elif request.session.score > 90 and quiz.title == "Aerodynamics" %}
+        {% elif request.session.score < 90 and quiz.title == "Aerodynamics" %}
+        {% elif request.session.score > 90 and quiz.title == "Aeromedical & Human Factors" %}
+        {% elif request.session.score < 90 and quiz.title == "Aeromedical & Human Factors" %}
+        {% elif request.session.score > 90 and quiz.title == "General Operations" %}
+        {% elif request.session.score < 90 and quiz.title == "General Operations" %}
+        {% endif %}
+    {% endif %}
+    {% if request.session.category == "Sports" %}
+        {% if request.session.score > 90 and quiz.title == "National Airspace" %}
+        {% elif request.session.score < 90 and quiz.title == "National Airspace" %}
+        {% elif request.session.score > 90 and quiz.title == "VFR Sectional" %}
+        {% elif request.session.score < 90 and quiz.title == "VFR Sectional" %}
+        {% elif request.session.score > 90 and quiz.title == "Aerodynamics" %}
+        {% elif request.session.score < 90 and quiz.title == "Aerodynamics" %}
+        {% elif request.session.score > 90 and quiz.title == "Aeromedical & Human Factors" %}
+        {% elif request.session.score < 90 and quiz.title == "Aeromedical & Human Factors" %}
+        {% elif request.session.score > 90 and quiz.title == "General Operations" %}
+        {% elif request.session.score < 90 and quiz.title == "General Operations" %}
+        {% endif %}
+    {% endif %}
+    
+    {% if request.session.score > 90 and quiz.title == "Space" %}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/FkQWpQd9Zdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% elif request.session.score > 90 and quiz.title == "Basketball" %}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/EKMQF5V-8qU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% elif request.session.score > 90 and quiz.title == "Anatomy" %}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ae4MadKPJC0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% elif request.session.score > 90 and quiz.title == "Football" %}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/hvQrhsaR0EE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% elif request.session.score > 90 and quiz.title == "Baseball" %}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GXMMV5syoFs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% elif request.session.score > 90 and quiz.title == "Pets" %}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zVtKbhhl81Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% elif request.session.score > 90 and quiz.title == "Airborne" %}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NR4JYGUdbWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% elif request.session.score >= 80 and quiz.title == "Airspace" %}
+    <iframe src="https://www.pornhub.com/embed/ph613e57f5bab08" frameborder="0" width="560" height="315" scrolling="no" allowfullscreen></iframe>
+    {% elif request.session.score < 90 and quiz.title == "Space" %}
+    <img src="{% static 'img/space.jpg' %}" height="200" width="200" alt="Space">
+    <h3>Try again for a better outcome :)</h3>
+    {% elif request.session.score < 90 and quiz.title == "Anatomy" %}
+    <img src="{% static 'img/anatomy.jpg' %}" height="200" width="200" alt="Anatomy">
+    {% elif request.session.score < 90 and quiz.title == "Basketball" %}
+    <img src="{% static 'img/basketball.jpg' %}" height="200" width="200" alt="Basketball">
+    {% elif request.session.score < 90 and quiz.title == "Football" %}
+    <img src="{% static 'img/football.jpg' %}" height="200" width="200" alt="Football">
+    {% elif request.session.score < 90 and quiz.title == "Baseball" %}
+    <img src="{% static 'img/baseball.jpg' %}" height="200" width="200" alt="Baseball">
+    {% elif request.session.score < 90 and quiz.title == "Pets" %}
+    <img src="{% static 'img/pets.jpg' %}" height="200" width="200" alt="Pets">
+    {% elif request.session.score < 90 and quiz.title == "Airborne" %}
+    <img src="{% static 'img/airborne.jpg' %}" height="200" width="200" alt="Airborne">
+    {% elif request.session.score < 80 and quiz.title == "Airspace" %}
+    <img src="{% static 'img/nationalairspace.jpg' %}" height="500" width="550" alt="National Airspace">
+    {% endif %}
+    <br>
+    <h3>Take a <a href="/">new</a> quiz or <a href="/takequiz/{{quiz.id}}">retry?</a></h3>
+</body>
+</html>

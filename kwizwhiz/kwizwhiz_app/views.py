@@ -51,6 +51,7 @@ def selectcategory(request):
 
 def selecttopic(request, category_id):
     category = Category.objects.get(id = category_id)
+    request.session['category'] = category.selection
     context = {
         "topics": category.topics.all()
     }
@@ -78,10 +79,33 @@ def takequiz(request, quiz_id):
     return render(request, "takequiz.html", context)
 
 def processquiz(request, quiz_id):
-    pass
+    if request.method == 'POST':
+        quiz = Quiz.objects.get(id = quiz_id)
+        total = 0
+        wrong = 0
+        correct = 0
+        score = 0
+        for question in quiz.questions.all():
+            total += 1
+            for answer in question.answers.all():
+                if answer.is_right and answer.answer_text == request.POST['answer-'+str(question.id)]:              
+                    correct += 1
+                elif not answer.is_right and answer.answer_text == request.POST['answer-'+str(question.id)]:
+                    wrong += 1
+        score = (correct/total) * 100
+        request.session['score'] = score
+        request.session['correct'] = correct
+        request.session['wrong'] = wrong
+        request.session['total'] = total
+        return redirect(f'/results/{quiz.id}')
+    else:
+        return redirect('/')
 
 def results(request, quiz_id):
-    pass
+    context = {
+        "quiz": Quiz.objects.get(id = quiz_id)
+    }
+    return render(request, "results.html", context)
 
 def logout(request):
     request.session.flush()
