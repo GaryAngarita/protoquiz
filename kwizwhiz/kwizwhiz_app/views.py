@@ -6,6 +6,9 @@ import bcrypt
 def homepage(request):
     return render(request, "homepage.html")
 
+def logreg(request):
+    return render(request, "logreg.html")
+
 def register(request):
     errors = User.objects.reg_validator(request.POST)
     if errors:
@@ -92,7 +95,7 @@ def processquiz(request, quiz_id):
                     correct += 1
                 elif not answer.is_right and answer.answer_text == request.POST['answer-'+str(question.id)]:
                     wrong += 1
-        score = (correct/total) * 100
+        score = round((correct/total) * 100)
         request.session['score'] = score
         request.session['correct'] = correct
         request.session['wrong'] = wrong

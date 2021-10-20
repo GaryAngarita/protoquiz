@@ -11,7 +11,7 @@
     <h1>Here are your results {{ request.session.name }}</h1>
 
     <h3>Total questions: {{request.session.total}}</h3>
-    <h3>Score: {{request.session.score}}</h3>
+    <h3>Score: {{request.session.score}}%</h3>
     <h3>Correct: {{request.session.correct}}</h3>
     <h3>Incorrect (or blank): {{request.session.wrong}}</h3>
     {% if request.session.category == "Fails" %}
@@ -85,51 +85,30 @@
     {% endif %}
     {% if request.session.category == "Sports" %}
         {% if request.session.score > 90 and quiz.title == "National Airspace" %}
+        <iframe src="https://www.pornhub.com/embed/ph6168ad81b73e0" frameborder="0" width="560" height="315" scrolling="no" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "National Airspace" %}
+        <h3>Try again for a better out-cum :)</h3>
+        <img src='https://dl.phncdn.com/gif/37900741.gif' alt='blonde handjob cum on tits' width="800" height="600">
         {% elif request.session.score > 90 and quiz.title == "VFR Sectional" %}
         {% elif request.session.score < 90 and quiz.title == "VFR Sectional" %}
+        <h3>Try again for a better out-cum :)</h3>
+        <img src='https://dl.phncdn.com/gif/37900771.gif' alt='the ideal woman' width="800" height="600">
         {% elif request.session.score > 90 and quiz.title == "Aerodynamics" %}
+        <iframe src="https://www.pornhub.com/embed/ph61531d495ae5e" frameborder="0" width="560" height="315" scrolling="no" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Aerodynamics" %}
+        <h3>Try again for a better out-cum :)</h3>
+        <img src='https://dl.phncdn.com/gif/37900831.gif' alt='face sitting' width="800" height="600">
         {% elif request.session.score > 90 and quiz.title == "Aeromedical & Human Factors" %}
+        <iframe src="https://www.pornhub.com/embed/ph6067a67669545" frameborder="0" width="560" height="315" scrolling="no" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Aeromedical & Human Factors" %}
+        <h3>Try again for a better out-cum :)</h3>
+        <img src='https://el.phncdn.com/gif/37900671.gif' alt='pink hair sideways fuck' width="800" height="600">
         {% elif request.session.score > 90 and quiz.title == "General Operations" %}
+        <iframe src="https://www.pornhub.com/embed/ph616ab1f8cdeb0" frameborder="0" width="560" height="315" scrolling="no" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "General Operations" %}
+        <h3>Try again for a better out-cum :)</h3>
+        <img src='https://dl.phncdn.com/gif/37904031.gif' alt='latina' width="800" height="600">
         {% endif %}
-    {% endif %}
-    
-    {% if request.session.score > 90 and quiz.title == "Space" %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/FkQWpQd9Zdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    {% elif request.session.score > 90 and quiz.title == "Basketball" %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/EKMQF5V-8qU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    {% elif request.session.score > 90 and quiz.title == "Anatomy" %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ae4MadKPJC0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    {% elif request.session.score > 90 and quiz.title == "Football" %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/hvQrhsaR0EE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    {% elif request.session.score > 90 and quiz.title == "Baseball" %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/GXMMV5syoFs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    {% elif request.session.score > 90 and quiz.title == "Pets" %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/zVtKbhhl81Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    {% elif request.session.score > 90 and quiz.title == "Airborne" %}
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/NR4JYGUdbWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    {% elif request.session.score >= 80 and quiz.title == "Airspace" %}
-    <iframe src="https://www.pornhub.com/embed/ph613e57f5bab08" frameborder="0" width="560" height="315" scrolling="no" allowfullscreen></iframe>
-    {% elif request.session.score < 90 and quiz.title == "Space" %}
-    <img src="{% static 'img/space.jpg' %}" height="200" width="200" alt="Space">
-    <h3>Try again for a better outcome :)</h3>
-    {% elif request.session.score < 90 and quiz.title == "Anatomy" %}
-    <img src="{% static 'img/anatomy.jpg' %}" height="200" width="200" alt="Anatomy">
-    {% elif request.session.score < 90 and quiz.title == "Basketball" %}
-    <img src="{% static 'img/basketball.jpg' %}" height="200" width="200" alt="Basketball">
-    {% elif request.session.score < 90 and quiz.title == "Football" %}
-    <img src="{% static 'img/football.jpg' %}" height="200" width="200" alt="Football">
-    {% elif request.session.score < 90 and quiz.title == "Baseball" %}
-    <img src="{% static 'img/baseball.jpg' %}" height="200" width="200" alt="Baseball">
-    {% elif request.session.score < 90 and quiz.title == "Pets" %}
-    <img src="{% static 'img/pets.jpg' %}" height="200" width="200" alt="Pets">
-    {% elif request.session.score < 90 and quiz.title == "Airborne" %}
-    <img src="{% static 'img/airborne.jpg' %}" height="200" width="200" alt="Airborne">
-    {% elif request.session.score < 80 and quiz.title == "Airspace" %}
-    <img src="{% static 'img/nationalairspace.jpg' %}" height="500" width="550" alt="National Airspace">
     {% endif %}
     <br>
     <h3>Take a <a href="/">new</a> quiz or <a href="/takequiz/{{quiz.id}}">retry?</a></h3>

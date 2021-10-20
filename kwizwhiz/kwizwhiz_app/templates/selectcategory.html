@@ -20,13 +20,13 @@
     <div>
         <a href="/selecttopic/{{category.id}}">{{category.selection}}
             {% if category.id == 1 %}
-            <img src="{% static 'img/science.jpg' %}" height="200" width="200">
+            <img src="{% static 'img/gaming.gif' %}" height="200" width="200">
             {% elif category.id == 2 %}
-            <img src="{% static 'img/sports.jpg' %}" height="200" width="200">
+            <img src="{% static 'img/sports.gif' %}" height="200" width="200">
             {% elif category.id == 3 %}
-            <img src="{% static 'img/animals.jpg' %}" height="200" width="200">
+            <img src="{% static 'img/fail-oops2.gif' %}" height="200" width="200">
             {% else %}
-            <img src="{% static 'img/aviation.jpg' %}"height="200" width="200">
+            <img src="{% static 'img/fighting.gif' %}"height="200" width="200">
             {% endif %}</a>        
     </div>
     {% endfor %}

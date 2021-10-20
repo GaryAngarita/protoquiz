@@ -1,0 +1,38 @@
+#pics{
+    max-width: fit-content;
+}
+
+img{
+    height: 262px;
+    width: 267px;
+    display: flex;
+    place-content: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h5, h3, h1{
+    text-align: center;
+    height: 60px;
+}
+
+footer{
+    display: flex;
+    place-content: center;
+    align-content: center;
+}
+
+p{
+    text-align: center;
+    max-width: 267px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    place-content: center;
+    align-content: center;
+}
+
+h3{
+    text-align: center;
+}
