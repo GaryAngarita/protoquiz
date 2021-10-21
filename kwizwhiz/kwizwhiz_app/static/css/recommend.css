@@ -25,6 +25,10 @@ span a{
     height: 350px;
 }
 
+
+
+/* recommendation page */
+
 .recs{
     display: flex;
     place-content: center;

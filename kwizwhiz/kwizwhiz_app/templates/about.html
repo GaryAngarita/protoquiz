@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Theme Simply Me</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Kwiz Whiz</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto"></ul>
+            <span class="navbar-text">
+                <a href="/logreg">Register</a>
+                <a href="/contact">Contact</a>
+                <a href="/media">Media</a>
+                <a href="/recommend">Recommendations</a>
+            </span>
+        </div>
+    </div>
+</nav><!-- /NAVBAR -->
+    <div class="container-fluid bg-1 text-center">
+        <h3>Who Am I?</h3>
+        <img src="{% static 'img/FB_IMG_1507835697822~2.jpg' %}" alt="Bird">
+        <!-- <h3></h3> -->
+    </div>
+
+    <div class="container-fluid bg-2 text-center">
+        <h3>About Me</h3>
+        <p>I am Veteran, single-father, and an up-and-coming software developer who likes to experiment with
+            out-of-the-box ideas. My true passion is raising efficiency. I like to create new means and methods for
+            saving time and resources. </p>
+    </div>
+
+    <div class="container-fluid bg-3 text-center">
+        <h3>Come Find Me!</h3>
+        <p>In Sunny Florida! I think Florida gets a bad rap. Sure, it's humid, swampy, and it costs more to register a car
+            than to buy a car. Buuuut, you can't beat the beaches, Southern hospitality, gas prices, breweries, and all the
+            sports you can shake a pom-pom at.</p>
+    </div>
+
+    <footer class="container-fluid bg-4 text-center">
+        <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 #pics{
     max-width: fit-content;
+    
 }
 
 img{
@@ -35,4 +36,8 @@ p{
 
 h3{
     text-align: center;
+}
+
+.column{
+    display: inline-block;
 }

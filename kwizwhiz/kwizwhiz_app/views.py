@@ -6,6 +6,18 @@ import bcrypt
 def homepage(request):
     return render(request, "homepage.html")
 
+def about(request):
+    return render(request, "about.html")
+
+def contact(request):
+    return render(request, "contact.html")
+
+def media(request):
+    return render(request, "media.html")
+
+def recommend(request):
+    return render(request, "recommend.html")
+    
 def logreg(request):
     return render(request, "logreg.html")
 
