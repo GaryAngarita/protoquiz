@@ -1,17 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Take Kwiz Whiz</title>
-    {% load static %}
-    <script>
 
-    </script>
+<head>
+    <title>Take Kwiz Whiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <a class="navbar-brand" href="/">Kwiz Whiz</a>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto"></ul>
+                <span class="navbar-text">
+                    <a href="/about">About</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/media">Media</a>
+                    <a href="/recommend">Recommendations</a>
+                    <a href="/logout">Log out</a>
+                </span>
+            </span>
+        </div>
+        </div>
+    </nav>
+  <!-- /NAVBAR -->
     <h1>Good luck with your {{quiz.title}} quiz, {{request.session.name}}!</h1>
 
     <div>
@@ -20,13 +41,13 @@
             {% csrf_token %}
             {% for question in quiz.questions.all %}
             <div><label for="question">{{question.title}}</label></div>
-                {% for answer in question.answers.all %}
-                  <input type="radio" id="html" name="answer-{{question.id}}" value="{{answer.answer_text}}">
-                    <label for="html">{{answer.answer_text}}</label><br>
-            <div class="row mb-3">
-                {% endfor %}
-            </div>
             <br>
+                {% for answer in question.answers.all %}
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" id="html" name="answer-{{question.id}}" value="{{answer.answer_text}}">
+                   <label class="form-check-label" for="html">{{answer.answer_text}}</label>
+                </div>
+                {% endfor %}
             <hr>
             {% endfor %}
             <button type="submit">Submit Quiz</button>
@@ -35,4 +56,9 @@
 
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+</body>
 
+</html>

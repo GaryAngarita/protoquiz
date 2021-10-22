@@ -9,6 +9,7 @@ h5, h3, h1{
 
 span a{
     padding-right: 10px;
+    text-decoration: none;
 }
 
 .container-fluid {

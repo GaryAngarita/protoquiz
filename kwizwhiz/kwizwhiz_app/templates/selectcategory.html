@@ -2,18 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kwiz Whiz Category Selection</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
@@ -21,32 +15,27 @@
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
+    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-        <!-- NAVBAR -->
-            <a class="navbar-brand" href="/">Kwiz Whiz</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
+        <a class="navbar-brand" href="/">Kwiz Whiz</a>
+            <span class="navbar-text">
                 <ul class="navbar-nav mr-auto"></ul>
                 <span class="navbar-text">
-                    <a href="/">Home</a>
                     <a href="/about">About</a>
                     <a href="/contact">Contact</a>
                     <a href="/media">Media</a>
                     <a href="/recommend">Recommendations</a>
+                    <a href="/logout">Log out</a>
                 </span>
-            </div>
+            </span>
         </div>
-    </nav><!-- /NAVBAR -->
+        </div>
+    </nav>
+  <!-- /NAVBAR -->
     <div>
         <div>            
             <h1>Select which category you wish to attempt</h1>
-        </div>
-        <div>
-            <a href="/">Homepage</a>
         </div>
     </div>
     <!-- {% for category in categories %}
@@ -64,29 +53,34 @@
     </div>
     {% endfor %} -->
     {% for category in categories %}
-    <div id="pics" class="row small-up-2 large-up-4">
-        <div class="column">
-            {% if category.selection == 'Gaming' %}
-          <img class="img-fluid" src="{% static 'img/gaming.gif' %}">
-          <p><a href="/selecttopic/{{category.id}}" class="button expanded">{{category.selection}}</a></p>
-        </div>
-        <div class="column">
-            {% elif category.selection == 'Sports' %}
-          <img class="img-fluid" src="{% static 'img/sports.gif' %}">
-          <p><a href="/selecttopic/{{category.id}}" class="button expanded">{{category.selection}}</a></p>
-        </div>
-        <div class="column">
-            {% elif category.selection == 'Fails' %}
-            <img class="img-fluid" src="{% static 'img/fail-oops2.gif' %}">
-            <p><a href="/selecttopic/{{category.id}}" class="button expanded">{{category.selection}}</a></p>
-        </div>
-        <div class="column">
-            {% elif category.selection == 'Fighting' %}
-            <img class="img-fluid" src="{% static 'img/fighting.gif' %}">
-            <p><a href="/selecttopic/{{category.id}}" class="button expanded">{{category.selection}}</a></p>
-            {% endif %}
-        </div>
+    <div id="pics">
+        <div class="row">
+            <div class="col">
+                {% if category.selection == 'Gaming' %}
+                <img class="img-fluid" src="{% static 'img/gaming.gif' %}">
+                <p><a href="/selecttopic/{{category.id}}" class="button expanded">{{category.selection}}</a></p>
+            </div>
+            <div class="col">
+                {% elif category.selection == 'Sports' %}
+                <img class="img-fluid" src="{% static 'img/sports.gif' %}">
+                <p><a href="/selecttopic/{{category.id}}" class="button expanded">{{category.selection}}</a></p>
+            </div>
+            <div class="col">
+                {% elif category.selection == 'Fails' %}
+                <img class="img-fluid" src="{% static 'img/fail-oops2.gif' %}">
+                <p><a href="/selecttopic/{{category.id}}" class="button expanded">{{category.selection}}</a></p>
+            </div>
+            <div class="col">
+                {% elif category.selection == 'Fighting' %}
+                <img class="img-fluid" src="{% static 'img/fighting.gif' %}">
+                <p><a href="/selecttopic/{{category.id}}" class="button expanded">{{category.selection}}</a></p>
+                {% endif %}
+            </div>
       </div>
       {% endfor %}
-</body>
-</html>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+  </body>
+  
+  </html>

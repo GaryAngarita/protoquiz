@@ -1,5 +1,6 @@
-a{
+span a{
     padding-right: 10px;
+    text-decoration: none;
 }
 
 h2, p{
@@ -26,7 +27,7 @@ h2, p{
 }
 
 .temp_three_four{
-    height: 336px;
+    height: 312px;
     padding-top: 80px;
 }
 

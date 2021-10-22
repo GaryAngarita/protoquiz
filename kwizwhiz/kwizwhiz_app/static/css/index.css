@@ -3,6 +3,11 @@
     
 }
 
+span a{
+    padding-right: 10px;
+    text-decoration: none;
+}
+
 img{
     height: 262px;
     width: 267px;
