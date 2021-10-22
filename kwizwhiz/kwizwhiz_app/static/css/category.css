@@ -1,0 +1,43 @@
+#container{
+    width: 1000px;
+    }
+
+span a{
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    height: 250px;
+    width: 250px;
+    display: flex;
+    place-content: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1{
+    text-align: center;
+    height: 60px;
+}
+
+p{
+    text-align: center;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    place-content: center;
+    align-content: center;
+}
+
+/* footer{
+    display: flex;
+    place-content: center;
+    align-content: center;
+} */
