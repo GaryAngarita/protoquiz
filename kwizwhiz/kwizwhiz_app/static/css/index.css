@@ -18,6 +18,14 @@ img{
     margin-right: auto;
 }
 
+iframe{
+    display: flex;
+    place-content: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 h5, h3, h1{
     text-align: center;
     height: 60px;
