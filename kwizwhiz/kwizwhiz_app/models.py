@@ -115,14 +115,14 @@ class Question(models.Model):
     class Meta:
         ordering = ['quiz']
 
-    quiz = models.ForeignKey(Quiz, related_name='questions', on_delete=models.DO_NOTHING)
+    quiz = models.ForeignKey(Quiz, related_name='questions', on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
 
     def __str__(self):
         return self.title
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question, related_name='answers', on_delete=models.DO_NOTHING)
+    question = models.ForeignKey(Question, related_name='answers', on_delete=models.CASCADE)
     answer_text = models.CharField(max_length=255)
     is_right = models.BooleanField(default=False)
 
