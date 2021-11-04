@@ -81,10 +81,12 @@
         <h3>Try again for a better outcome :)</h3>
         <img src="{% static 'img/oscar.jpeg' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "New Quiz" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/mdMoLPXZrpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "New Quiz" %}
         <h3>Try again for a better outcome :)</h3>
         <img src="{% static 'img/lottery.jpg' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Miscellaneous" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/vzAVqF_KVLE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Miscellaneous" %}
         <h3>Try again for a better outcome :)</h3>
         <img src="{% static 'img/soda.gif' %}" alt="">
@@ -100,7 +102,7 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/OLtu59hiKXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "IFR/VFR Sectional" %}
         <h3>Try again for a better outcome :)</h3>
-        <img src="{% static 'img/fightclub.jpeg' %}" alt="">
+        <img src="{% static 'img/sucker.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Aerodynamics" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/bcbXnjfswpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Aerodynamics" %}
@@ -117,15 +119,30 @@
         <h3>Try again for a better outcome :)</h3>
         <img src="{% static 'img/captamerica.jpg' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "General Operations 2" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZTAows-mr_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "General Operations 2" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/marriage.jpg' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Aeromedical & Human Factors 2" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4d0NNKTkk3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Aeromedical & Human Factors 2" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/school.jpg' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Approaches" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HYJu56n4bdg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Approaches" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/napoleon.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "New Quiz" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/SA-CB5yu_XM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "New Quiz" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/kangaroo.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Miscellaneous" %}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MArt2LG1MpM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Miscellaneous" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/backfist.gif' %}" alt="">
         {% endif %}
     {% endif %}
     {% if request.session.category == "Gaming" %}
