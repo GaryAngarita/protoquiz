@@ -42,7 +42,7 @@
                 <form action="/register" method="post" id="register">
                     {% csrf_token %}
                     {% for message in messages %}
-                        <p>{{ message }}</p>
+                        <p>- {{ message }}</p>
                     {% endfor %}
                     <div class="row mb-3">
                         <label for="first_name" class="col-sm-2 col-form-label">First Name</label>

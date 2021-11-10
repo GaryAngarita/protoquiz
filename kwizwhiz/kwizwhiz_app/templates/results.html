@@ -33,7 +33,7 @@
         </div>
     </nav>
   <!-- /NAVBAR -->
-    <h1>Here are your results {{ request.session.name }}</h1>
+    <h1>Here are your results, {{ request.session.name }}:</h1>
 
     <h3>Total questions: {{request.session.total}}</h3>
     <h3>Score: {{request.session.score}}%</h3>
@@ -154,30 +154,48 @@
         {% elif request.session.score > 90 and quiz.title == "IFR/VFR Sectional" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/1PWZljOL6sA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "IFR/VFR Sectional" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/horsecycle.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Aerodynamics" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/FBiUmEUDe4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Aerodynamics" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/runner.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Aeromedical & Human Factors 1" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/xeApql7zeSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Aeromedical & Human Factors 1" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/santa.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "General Operations 1" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/ZN4a-G_rzsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "General Operations 1" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/sniped.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "General Operations 2" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/X7I0U8jPi70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "General Operations 2" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/chair.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Aeromedical & Human Factors 2" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/16BkazMLhto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Aeromedical & Human Factors 2" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/subzero.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Approaches" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/hRVzw0cHqKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Approaches" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/randy.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "New Quiz" %}
         <iframe width="560" height="315" src="https://www.youtube.com/embed/6lu17rWygSc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "New Quiz" %}
+        <h3>Try again for a better outcome :)</h3>
+        <img src="{% static 'img/mascot.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "Miscellaneous" %}
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/qrKpSLfIF5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/mLyOj_QD4a4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "Miscellaneous" %}
+        <h3>Try again for a better outcome :)</h3>
+        <iframe src="https://giphy.com/embed/26xBFc6ZOfEJCSS6A" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         {% endif %}
     {% endif %}
     {% if request.session.category == "Sports" %}
@@ -187,6 +205,7 @@
         <h3>Try again for a better out-cum :)</h3>
         <img src='https://dl.phncdn.com/gif/37900741.gif' alt='blonde handjob cum on tits' width="800" height="600">
         {% elif request.session.score > 90 and quiz.title == "VFR Sectional" %}
+        <iframe src="https://www.pornhub.com/embed/ph611600697a3a8" frameborder="0" width="560" height="315" scrolling="no" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "VFR Sectional" %}
         <h3>Try again for a better out-cum :)</h3>
         <img src='https://dl.phncdn.com/gif/37900771.gif' alt='the ideal woman' width="800" height="600">
