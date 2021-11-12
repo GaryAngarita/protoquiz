@@ -2,8 +2,7 @@ from django.db import models
 import re
 import bcrypt
 
-email_regex1 = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.edu+$')
-email_regex2 = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.mil+$')
+email_regex = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.(mil|edu)$')
 
 
 class UserManager(models.Manager):
@@ -20,7 +19,7 @@ class UserManager(models.Manager):
             errors['short_last'] = 'Last name must be 2 letters or more'
         if len(postData['email']) == 0:
             errors['blank_email'] = 'Email cannot not be blank'
-        if not email_regex1.match(postData['email']) or not email_regex2.match(postData['email']):
+        if not email_regex.match(postData['email']):
             errors['user_email'] = 'Not a valid email address'
         if user_emails:
             errors['email_exists'] = 'Email already in use'
