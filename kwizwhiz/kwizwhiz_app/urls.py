@@ -17,5 +17,6 @@ urlpatterns = [
     path('takequiz/<int:quiz_id>', views.takequiz),
     path('processquiz/<int:quiz_id>', views.processquiz),
     path('results/<int:quiz_id>', views.results),
+    path('dashboard', views.dashboard),
     path('logout', views.logout),
 ]
