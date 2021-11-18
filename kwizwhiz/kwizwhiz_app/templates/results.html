@@ -254,6 +254,18 @@
     {% endif %}
     <br>
     <h3>Take a <a href="/selectcategory">new</a> quiz or <a href="/takequiz/{{quiz.id}}">retry?</a></h3>
+    <table style="width: 100%">
+        <tr>
+            <th>Attempt #</th>
+            <th>Quiz Name</th>
+            <th>Quiz Score</th>
+        </tr>
+        <tr>
+            <td>{{quiz.count}}</td>
+            <td>{{quiz.title}}</td>
+            <td>{{quiz.score}}</td>
+        </tr>
+    </table>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>

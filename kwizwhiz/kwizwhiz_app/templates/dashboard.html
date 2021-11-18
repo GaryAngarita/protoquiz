@@ -37,5 +37,19 @@
     {% endif %}
     <br>
     <h3>Take a <a href="/selectcategory">new</a> quiz?</h3>
+    <table style="width: 100%">
+        <tr>
+            <th>Attempt #</th>
+            <th>Quiz Name</th>
+            <th>Quiz Score</th>
+        </tr>
+        {% for quiz in user.quizzes.all %}
+        <tr>
+            <td>{{quiz.count}}</td>
+            <td>{{quiz.title}}</td>
+            <td>{{quiz.score}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>

@@ -111,6 +111,7 @@ def processquiz(request, quiz_id):
     else:
         if request.method == 'POST':
             quiz = Quiz.objects.get(id = quiz_id)
+            request.session['quiz'] = quiz.id
             count = 0
             total = 0
             wrong = 0
@@ -132,7 +133,10 @@ def processquiz(request, quiz_id):
             request.session['total'] = total
             average = round(round(score + request.session['score']) / count)
             request.session['average'] = average
-            return redirect(f'/results/{quiz.id}')
+            context = {
+                "quiz": quiz,
+            }    
+            return redirect(f'/results/{quiz.id}', context)
         else:
             return redirect('/')
 
@@ -148,7 +152,12 @@ def results(request, quiz_id):
 def dashboard(request):
     if 'id' not in request.session:
         return redirect('/')
-    return render(request, "dashboard.html")
+    else:
+        quiz = request.session['quiz']
+        context = {
+            "quiz": quiz,
+        }    
+    return render(request, "dashboard.html", context)
 
 def logout(request):
     request.session.flush()
