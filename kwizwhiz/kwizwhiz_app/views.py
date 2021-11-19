@@ -111,7 +111,7 @@ def processquiz(request, quiz_id):
     else:
         if request.method == 'POST':
             quiz = Quiz.objects.get(id = quiz_id)
-            request.session['quiz'] = quiz.id
+            Quiz.objects.create(count = request.POST['count'])
             count = 0
             total = 0
             wrong = 0
@@ -133,6 +133,7 @@ def processquiz(request, quiz_id):
             request.session['total'] = total
             average = round(round(score + request.session['score']) / count)
             request.session['average'] = average
+
             context = {
                 "quiz": quiz,
             }    

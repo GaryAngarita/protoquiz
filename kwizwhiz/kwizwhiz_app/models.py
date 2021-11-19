@@ -104,6 +104,8 @@ class Quiz(models.Model):
 
     topic = models.ForeignKey(Topic, related_name='quizzes', on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=100, default='New Quiz')
+    count = models.IntegerField(null=False)
+    score = models.IntegerField(null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
