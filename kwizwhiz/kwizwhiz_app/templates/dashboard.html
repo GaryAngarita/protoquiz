@@ -43,7 +43,7 @@
             <th>Quiz Name</th>
             <th>Quiz Score</th>
         </tr>
-        {% for quiz in user.quizzes.all %}
+        {% for quiz in topic.quizzes.all %}
         <tr>
             <td>{{quiz.count}}</td>
             <td>{{quiz.title}}</td>

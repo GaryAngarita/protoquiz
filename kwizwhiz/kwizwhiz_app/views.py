@@ -101,7 +101,8 @@ def takequiz(request, quiz_id):
         context = {
             "answers": answers,
             "questions": questions,
-            "quiz": quiz
+            "quiz": quiz,
+            "quizzes": Quiz.objects.all()
         }
     return render(request, "takequiz.html", context)
 
@@ -111,7 +112,10 @@ def processquiz(request, quiz_id):
     else:
         if request.method == 'POST':
             quiz = Quiz.objects.get(id = quiz_id)
-            Quiz.objects.create(count = request.POST['count'])
+            context = {
+                "quiz": quiz,
+            }
+            Count.objects.create(count = request.POST['count'])
             count = 0
             total = 0
             wrong = 0
@@ -128,15 +132,13 @@ def processquiz(request, quiz_id):
             count += 1
             score = round((correct/total) * 100)
             request.session['score'] = score
+            Score.objects.create(score = score)
             request.session['correct'] = correct
             request.session['wrong'] = wrong
             request.session['total'] = total
             average = round(round(score + request.session['score']) / count)
             request.session['average'] = average
-
-            context = {
-                "quiz": quiz,
-            }    
+    
             return redirect(f'/results/{quiz.id}', context)
         else:
             return redirect('/')

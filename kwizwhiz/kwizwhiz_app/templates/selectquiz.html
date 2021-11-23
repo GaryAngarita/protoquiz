@@ -39,28 +39,43 @@
             <h1>Select which quiz you wish to take</h1>
         </div>
     </div>
-    {% for quiz in topic.quizzes.all %}
+        {% for quiz in topic.quizzes.all %}
+        <div>
+            <a href="/takequiz/{{quiz.id}}">{{quiz.title}}
+                {% if quiz.title == "Basketball" %}
+                <img src="{% static 'img/basketball.jpg' %}" height="200" width="200">
+                {% elif quiz.title == "Football" %}
+                <img src="{% static 'img/football.jpg' %}" height="200" width="200">
+                {% elif quiz.title == "Baseball" %}
+                <img src="{% static 'img/baseball.jpg' %}" height="200" width="200">
+                {% elif quiz.title == "Anatomy" %}
+                <img src="{% static 'img/anatomy.jpg' %}" height="200" width="200">
+                {% elif quiz.title == "Space" %}
+                <img src="{% static 'img/space.jpg' %}" height="200" width="200">
+                {% elif quiz.title == "Pets" %}
+                <img src="{% static 'img/pets.jpg' %}" height="200" width="200">
+                {% elif quiz.title == "Airborne" %}
+                <img src="{% static 'img/airborne.jpg' %}" height="200" width="200">
+                {% elif quiz.title == "Airspace" %}
+                <img src="{% static 'img/airspace.jpg' %}" height="200" width="250">
+                {% endif %}</a> {{quiz.count}}        
+        </div>
+        {% endfor %}
     <div>
-        <a href="/takequiz/{{quiz.id}}">{{quiz.title}}
-            {% if quiz.title == "Basketball" %}
-            <img src="{% static 'img/basketball.jpg' %}" height="200" width="200">
-            {% elif quiz.title == "Football" %}
-            <img src="{% static 'img/football.jpg' %}" height="200" width="200">
-            {% elif quiz.title == "Baseball" %}
-            <img src="{% static 'img/baseball.jpg' %}" height="200" width="200">
-            {% elif quiz.title == "Anatomy" %}
-            <img src="{% static 'img/anatomy.jpg' %}" height="200" width="200">
-            {% elif quiz.title == "Space" %}
-            <img src="{% static 'img/space.jpg' %}" height="200" width="200">
-            {% elif quiz.title == "Pets" %}
-            <img src="{% static 'img/pets.jpg' %}" height="200" width="200">
-            {% elif quiz.title == "Airborne" %}
-            <img src="{% static 'img/airborne.jpg' %}" height="200" width="200">
-            {% elif quiz.title == "Airspace" %}
-            <img src="{% static 'img/airspace.jpg' %}" height="200" width="250">
-            {% endif %}</a>        
-    </div>
-    {% endfor %}
+    <table style="width: 100%">
+        <tr>
+            <th>Attempt #</th>
+            <th>Quiz Name</th>
+            <th>Quiz Score</th>
+        </tr>
+        {% for quiz in topic.quizzes.all %}
+        <tr>
+            <td>{{quiz.count}}</td>
+            <td>{{quiz.title}}</td>
+            <td>{{quiz.score}}</td>
+        </tr>
+        {% endfor %}
+    </table>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>

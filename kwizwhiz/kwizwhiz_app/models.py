@@ -104,13 +104,40 @@ class Quiz(models.Model):
 
     topic = models.ForeignKey(Topic, related_name='quizzes', on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=100, default='New Quiz')
-    count = models.IntegerField(null=False)
-    score = models.IntegerField(null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
+
+class Count(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Counts"
+        ordering = ['count']
+
+    quiz = models.ForeignKey(Quiz, related_name="attempt_count", on_delete=models.CASCADE)
+    count = models.IntegerField(null=False, default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.count
+
+class Score(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Scores"
+        ordering = ['score']
+
+    quiz = models.ForeignKey(Quiz, related_name="quiz_score", on_delete=models.DO_NOTHING)
+    score = models.IntegerField(null=False, default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.score
+    
 
 class Question(models.Model):
 
