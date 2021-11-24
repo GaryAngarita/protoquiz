@@ -84,10 +84,13 @@ def selectquiz(request, topic_id):
     else:
         topic = Topic.objects.get(id = topic_id)
         quizzes = Quiz.objects.all()
+        count = Count.objects.all()
+        score = Score.objects.all()
         context = {
             "topic": topic,
-            "quizzes": quizzes
-
+            "quizzes": quizzes,
+            "count": count,
+            "score": score
         }
     return render(request, "selectquiz.html", context)
 
@@ -115,7 +118,6 @@ def processquiz(request, quiz_id):
             context = {
                 "quiz": quiz,
             }
-            Count.objects.create(count = request.POST['count'])
             count = 0
             total = 0
             wrong = 0
@@ -130,6 +132,7 @@ def processquiz(request, quiz_id):
                     elif not answer.is_right and answer.answer_text == request.POST['answer-'+str(question.id)]:
                         wrong += 1
             count += 1
+            Count.objects.create(count = count)
             score = round((correct/total) * 100)
             request.session['score'] = score
             Score.objects.create(score = score)
