@@ -83,6 +83,7 @@ def selectquiz(request, topic_id):
         return redirect('/')
     else:
         topic = Topic.objects.get(id = topic_id)
+        request.session['topic_id'] = topic.id
         quizzes = Quiz.objects.all()
         count = Count.objects.all()
         score = Score.objects.all()
@@ -132,10 +133,9 @@ def processquiz(request, quiz_id):
                     elif not answer.is_right and answer.answer_text == request.POST['answer-'+str(question.id)]:
                         wrong += 1
             count += 1
-            Count.objects.create(count = count)
+            request.session['count'] = count
             score = round((correct/total) * 100)
             request.session['score'] = score
-            Score.objects.create(score = score)
             request.session['correct'] = correct
             request.session['wrong'] = wrong
             request.session['total'] = total
@@ -159,9 +159,11 @@ def dashboard(request):
     if 'id' not in request.session:
         return redirect('/')
     else:
-        quiz = request.session['quiz']
+        topic = Topic.objects.get(id = request.session['topic_id'])
+        quizzes = Quiz.objects.all()
         context = {
-            "quiz": quiz,
+            "topic": topic,
+            "quizzes": quizzes,
         }    
     return render(request, "dashboard.html", context)
 
