@@ -114,10 +114,10 @@ class Count(models.Model):
 
     class Meta:
         verbose_name_plural = "Counts"
-        ordering = ['count']
+        ordering = ['attempt']
 
     quiz = models.ForeignKey(Quiz, related_name="attempt_count", on_delete=models.CASCADE)
-    count = models.IntegerField(null=False, default=0)
+    attempt = models.IntegerField(null=False, default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -128,10 +128,10 @@ class Score(models.Model):
 
     class Meta:
         verbose_name_plural = "Scores"
-        ordering = ['score']
+        ordering = ['calculated']
 
     quiz = models.ForeignKey(Quiz, related_name="quiz_score", on_delete=models.DO_NOTHING)
-    score = models.IntegerField(null=False, default=0)
+    calculated = models.IntegerField(null=False, default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

@@ -65,7 +65,7 @@
         </div>
         {% endfor %}
     <div>
-    <table style="width: 100%">
+    <!-- <table style="width: 100%">
         <tr>
             <th>Attempt #</th>
             <th>Quiz Name</th>
@@ -73,12 +73,12 @@
         </tr>
         {% for quiz in topic.quizzes.all %}
         <tr>
-            <td>{{count.count}}</td>
+            <td>{{count.attempt}}</td>
             <td>{{quiz.title}}</td>
-            <td>{{score.score}}</td>
+            <td>{{score.calculated}}</td>
         </tr>
         {% endfor %}
-    </table>
+    </table> -->
 </body>
 
 </html>

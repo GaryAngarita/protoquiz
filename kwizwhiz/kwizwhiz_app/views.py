@@ -62,6 +62,9 @@ def selectcategory(request):
     if 'id' not in request.session:
         return redirect('/')
     else:
+        if 'activities' not in request.session or 'count' not in request.session:
+            request.session['count'] = 0
+            request.session['activities'] = []
         context = {
             "categories": Category.objects.all()
         }
@@ -116,10 +119,11 @@ def processquiz(request, quiz_id):
     else:
         if request.method == 'POST':
             quiz = Quiz.objects.get(id = quiz_id)
+            activities = request.session['activities']
             context = {
                 "quiz": quiz,
             }
-            count = 0
+            count = request.session['count']
             total = 0
             wrong = 0
             correct = 0
@@ -141,7 +145,9 @@ def processquiz(request, quiz_id):
             request.session['total'] = total
             average = round(round(score + request.session['score']) / count)
             request.session['average'] = average
-    
+            stmnt = f'{len(activities) + 1}. Have attempted {count} quizzes. You scored {score}% on {quiz.title}'
+            activities.insert(0, stmnt)
+            request.session['activities'] = activities
             return redirect(f'/results/{quiz.id}', context)
         else:
             return redirect('/')
@@ -159,11 +165,13 @@ def dashboard(request):
     if 'id' not in request.session:
         return redirect('/')
     else:
+        activities = request.session['activities']
         topic = Topic.objects.get(id = request.session['topic_id'])
         quizzes = Quiz.objects.all()
         context = {
             "topic": topic,
             "quizzes": quizzes,
+            "activities": activities
         }    
     return render(request, "dashboard.html", context)
 
