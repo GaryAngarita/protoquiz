@@ -47,10 +47,16 @@ p{
     align-content: center;
 }
 
-h3{
+h3, h4{
     text-align: center;
 }
 
 .column{
     display: inline-block;
+}
+
+/* dashboard */
+#reset{
+    display: flex;
+    place-content: center; 
 }
