@@ -4,6 +4,6 @@ This app promises to provide a reward for adults that will encourage them to ret
 
 Click on the gif for an introductory video
 
-[![Intro Video](first_quiz_gif.gif)](https://youtu.be/57n0gJ6CS30)
-
 [![Intro Video](second_quiz_gif.gif)](https://youtu.be/57n0gJ6CS30)
+
+[![Intro Video](first_quiz_gif.gif)](https://www.youtube.com/watch?v=57n0gJ6CS30)
