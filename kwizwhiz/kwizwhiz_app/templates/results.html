@@ -25,10 +25,6 @@
             <span class="navbar-text">
                 <ul class="navbar-nav mr-auto"></ul>
                 <span class="navbar-text">
-                    <a href="/about">About</a>
-                    <a href="/contact">Contact</a>
-                    <a href="/media">Media</a>
-                    <a href="/recommend">Recommendations</a>
                     <a href="/dashboard">Dashboard</a>
                     <a href="/logout">Log out</a>
                 </span>
@@ -85,7 +81,7 @@
         <h3>Try again for a better outcome :)</h3>
         <img src="{% static 'img/oscar.jpeg' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "New Quiz" %}
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/mdMoLPXZrpI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/u3gSkxqYIEs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "New Quiz" %}
         <h3>Try again for a better outcome :)</h3>
         <img src="{% static 'img/lottery.jpg' %}" alt="">
@@ -138,7 +134,7 @@
         <h3>Try again for a better outcome :)</h3>
         <img src="{% static 'img/napoleon.gif' %}" alt="">
         {% elif request.session.score > 90 and quiz.title == "New Quiz" %}
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/SA-CB5yu_XM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/LWE79K2Ii-s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {% elif request.session.score < 90 and quiz.title == "New Quiz" %}
         <h3>Try again for a better outcome :)</h3>
         <img src="{% static 'img/kangaroo.gif' %}" alt="">

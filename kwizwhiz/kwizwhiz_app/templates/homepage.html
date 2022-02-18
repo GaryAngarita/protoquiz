@@ -34,8 +34,11 @@
   </nav>
   <!-- NAVBAR -->
     <br>
+    {% if 'id' in request.session %}
+    <h1><a href="/selectcategory">Return</a> to Kwiz Whiz</h1>
+    {% else %}
     <h1>Welcome to Kwiz Whiz!</h1>
-
+    {% endif %}
     <h3>Need to take a quiz but you're tired of boring, rigid websites?</h3>
     <h3>You need the Kwiz Whiz way!</h3>
     <h3>You can take quizzes on many subjects, including:</h3>
@@ -52,8 +55,11 @@
         </div>
     </div>
     <br>
-    <h3>All you need is a .mil email address and you can get started right away!</h3>
+    <h3>All you need is a .mil or .edu email address and you can get started right away!</h3>
     <h4>Click <a href="/logreg">here</a> to get started!</h4>
+    {% if 'id' in request.session %}
+    <h4><a href="/logout">Log Off</a></h4>
+    {% endif %}
     <br>
 
 
